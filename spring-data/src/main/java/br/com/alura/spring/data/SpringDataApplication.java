@@ -16,7 +16,7 @@ public class SpringDataApplication implements CommandLineRunner {
 	private CargoService cargoService = null;
 	private FuncionarioService funcionarioService = null;
 	private RelatorioFuncionarioDinamico relFuncionaroDinamico = null;
-	private boolean stop = false;
+	private boolean stopProg = false;
 	
 	public SpringDataApplication(CargoService cargoService, FuncionarioService funcService, RelatorioFuncionarioDinamico rel) {
 		this.cargoService = cargoService;
@@ -33,7 +33,7 @@ public class SpringDataApplication implements CommandLineRunner {
 		System.out.println("Metodo executado apos o start da aplicacao (pertence a interface CommandLineRunnger)...");
 		Scanner scanner = new Scanner(System.in);
 		
-		while(!stop) {
+		while(!stopProg) {
 			System.out.println("Digite a acao desejada:");
 			System.out.println("0 - Sair");
 			System.out.println("1 - Adicionar cargo");
@@ -94,7 +94,7 @@ public class SpringDataApplication implements CommandLineRunner {
 					break;
 					
 				default:
-					stop = true;
+					stopProg = true;
 					break;
 			}
 		}
